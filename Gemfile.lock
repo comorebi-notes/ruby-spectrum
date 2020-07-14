@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    awesome_print (1.8.0)
+    amazing_print (1.2.1)
     narray (0.6.1.2)
     numo-fftw (0.1.1)
       numo-narray (~> 0.9.0)
@@ -15,7 +15,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  awesome_print
+  amazing_print
   numo-fftw
   numo-narray
   open3

@@ -1,7 +1,7 @@
-class GNUPlotter < Struct.new(:data, :params)
+class GNUPlotter < Struct.new(:data, :params, :xrange, :yrange)
   def plot
     Open3.capture2('gnuplot', stdin_data: gnuplot_commands, binmode: true)
-    system "open #{params[:image_name]}"
+    # system "open #{params[:image_name]}"
   end
 
   private
@@ -10,6 +10,8 @@ class GNUPlotter < Struct.new(:data, :params)
     commands = %(
       set terminal png font "/Library/Fonts/Arial.ttf" 14
       set title "#{params[:title]}"
+      set xrange [0:#{xrange}]
+      set yrange [0:#{yrange}]
       set xlabel "#{params[:x_axis_title]}"
       set ylabel "#{params[:y_axis_title]}"
       set output "#{params[:image_name]}"
