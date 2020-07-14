@@ -16,7 +16,7 @@ class GNUPlotter < Struct.new(:data, :params, :xrange, :yrange)
       set ylabel "#{params[:y_axis_title]}"
       set output "#{params[:image_name]}"
       set key off
-      plot "-" with lines
+      plot "-" with lines lw 2 lt rgb 'red'
     )
 
     data.each do |x, y|
