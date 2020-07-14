@@ -1,0 +1,29 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    awesome_print (1.8.0)
+    narray (0.6.1.2)
+    numo-fftw (0.1.1)
+      numo-narray (~> 0.9.0)
+    numo-narray (0.9.1.8)
+    open3 (0.1.0)
+    ruby-fftw3 (1.0.2)
+      narray
+    ruby-sox (0.0.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  awesome_print
+  numo-fftw
+  numo-narray
+  open3
+  ruby-fftw3
+  ruby-sox
+
+RUBY VERSION
+   ruby 2.7.1p83
+
+BUNDLED WITH
+   2.1.4
