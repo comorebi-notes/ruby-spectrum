@@ -1,3 +1,7 @@
+# 引数をとった音源に対して、スペクトル解析した結果を描画します。
+# 横軸：周波数
+# 縦軸：大きさ
+
 require 'open3'
 require 'numo/narray'
 require 'numo/fftw'
@@ -21,7 +25,7 @@ def calculate_fft(signal, duration, max_points = 3000)
   end
 end
 
-dat_file_name = 'tmp/files/sample_01.dat'
+dat_file_name = 'tmp/files/sample_02.dat'
 Sox::Cmd.new.add_input(ARGV[0]).set_output(dat_file_name).run
 
 signal, duration = read_channel_data(dat_file_name, 1)
@@ -31,7 +35,7 @@ max_frequency = spectrum.sort_by(&:last).last.first.round(2)
 
 spectrum_plot_params = {
   image_name:   'tmp/gnuplot/spectrum.png',
-  title:        "First guitar string spectrum #{max_frequency}Hz",
+  title:        "spectrum #{max_frequency}Hz",
   x_axis_title: 'Frequency, Hz',
   y_axis_title: 'Magnitude'
 }
