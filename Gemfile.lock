@@ -2,13 +2,11 @@ GEM
   remote: https://rubygems.org/
   specs:
     amazing_print (1.2.1)
-    narray (0.6.1.2)
     numo-fftw (0.1.1)
       numo-narray (~> 0.9.0)
     numo-narray (0.9.1.8)
     open3 (0.1.0)
-    ruby-fftw3 (1.0.2)
-      narray
+    parallel (1.19.2)
     ruby-sox (0.0.3)
 
 PLATFORMS
@@ -19,7 +17,7 @@ DEPENDENCIES
   numo-fftw
   numo-narray
   open3
-  ruby-fftw3
+  parallel
   ruby-sox
 
 RUBY VERSION

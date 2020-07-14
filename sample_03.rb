@@ -6,7 +6,7 @@ require 'open3'
 require 'numo/narray'
 require 'numo/fftw'
 require 'ruby-sox'
-require 'amazing_print'
+require 'parallel'
 require_relative 'lib/plotter'
 
 FPS = 24
@@ -33,7 +33,8 @@ Sox::Cmd.new.add_input(ARGV[0]).set_output(dat_file_name).run
 
 data = read_channel_data(dat_file_name, 1)
 
-data.each_with_index do |data_unit, index|
+# data.each_with_index do |data_unit, index|
+Parallel.each_with_index(data, in_processes: 4) do |data_unit, index|
   puts "#{index} / #{data.size}"
   signal = data_unit[0]
   duration = data_unit[2] - data_unit[1]
